@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorijska vježba 4</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body onload = "onload()">
+    <h1>Lab4 - HTTP2 testiranje</h1>
+    <script type="text/javascript" src="index.js"></script>
+    <p>
+      U središtu svih poboljšanja
+      performansi HTTP/2 je uvođenje 
+      novog binarnog sloja okvira
+      (binary framing layer) iznad 
+      slojeva TCP/IP (obavezan) i TLS 
+      (opcionalan) protokola, koji 
+      određuje kako se HTTP poruke
+      formatiraju i prenose između
+      klijenta i poslužitelja.
+    </p>
+    <p>Binarni okviri omogućuju složenije i učinkovitije upravljanje sesijama u usporedbi s 
+      tekstualnim formatom koji se koristi u HTTP/1.x.</p>
+    <p>HTTP/2 je dizajniran kao binarni protokol, što znači da su sve informacije koje se 
+      prenose između klijenta i poslužitelja strukturirane u binarnim okvirima</p>
+    <p>Svaki binarni okvir sastoji se od okvira zaglavlja (HEADERS frame) i okvira podataka 
+      (DATA frame), a format podataka ovisi o vrsti okvira</p>
+    <p>Uvođenjem binarnog uokvirivanja (binary framing) mijenja se način razmjene
+        podataka između klijenta i poslužitelja</p>
+    <p>Svaki HTTP/2 zahtjev i odgovor dobivaju zajednički jedinstveni ID koji se naziva ID toka
+      (stream ID), a HTTP/2 zahtjev i odgovor podijeljeni su u okvire. Okviri predstavljaju
+      binarne podatke (npr. HTTP zaglavlja, tekst, poruke).</p>
+    <p>Za postavljanje HTTP/2 zahtjeva, 
+      klijent prvo dijeli zahtjev na binarne
+      okvire i okvirima dodjeljuje ID 
+      streama zahtjeva. Zatim započinje
+      TCP/IP vezu s poslužiteljem. Nakon 
+      toga klijent šalje okvire poslužitelju. 
+      Nakon što poslužitelj ima spreman
+      odgovor, on dijeli odgovor na okvire i 
+      daje okvirima svog odgovora isti ID 
+      streama. Potom poslužitelj nastavlja 
+      slati odgovor u okvirima.
+      </p>
+      <p>ID streama je neophodan jer se više
+        zahtjeva izvoru šalje putem jedne
+        TCP/IP veze, pa ID omogućuje
+        identifikaciju kojoj poruci (zahtjevu ili
+        odgovoru) okvir pripada.</p>
+      <p>Ako klijent koji podržava samo HTTP/1.x želi ostvariti višestruke paralelne 
+        zahtjeve kako bi povećao performanse, onda mora otvoriti višestruke TCP 
+        konekcije</p>
+    <div id = "insertImages">
+    </div>
+  </body>
+</html>

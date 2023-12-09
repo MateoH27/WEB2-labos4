@@ -1,0 +1,13 @@
+html {
+    color-scheme: light dark;
+}
+
+p {
+    margin: 0 auto;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-weight: 300;
+}
+
+.slika {
+    width: 100px;
+}
